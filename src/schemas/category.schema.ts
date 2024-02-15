@@ -15,6 +15,9 @@ export class Category {
   @Prop({ required: true })
   price: number;
 
+  @Prop({ required: true })
+  category: number;
+  
   @Prop({ type: [{ type: 'ObjectId', ref: 'Product' }] })
   products: Product[];
 }
