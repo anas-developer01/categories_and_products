@@ -1,21 +1,19 @@
-// app.module.ts
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { CatsModule } from './cats/cats.module';
 import { DatabaseService } from 'database/database.service';
 import { XmlToJsonModule } from './xml-to-json/xml-to-json.module';
+import { ProductModule } from './products/product.module';
+import { CategoryModule } from './category/category.module';
 
 @Module({
   imports: [
     MongooseModule.forRootAsync({
       useClass: DatabaseService,
     }),
-    CatsModule,
     XmlToJsonModule,
+    CategoryModule,
+    ProductModule,
   ],
-  controllers: [AppController],
-  providers: [AppService, DatabaseService],
+  providers: [DatabaseService],
 })
 export class AppModule {}
