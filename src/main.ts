@@ -13,8 +13,8 @@ async function bootstrap() {
 
   // Swagger configuration
   const config = new DocumentBuilder()
-    .setTitle('Your API Title')
-    .setDescription('Your API Description')
+    .setTitle('Product and Its Categories')
+    .setDescription('CRUD and Change file from Xml to json')
     .setVersion('1.0')
     .build();
 
